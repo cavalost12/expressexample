@@ -3,6 +3,7 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 const apiFtUrl = 'https://api.ft.com/content/search/v1';
+const port = process.env.PORT || 3000
 
 app.get('/signup/:id', async (req, res) => {
     const { data } = await axios.post(apiFtUrl, {
@@ -22,6 +23,6 @@ app.get('/signup/:id', async (req, res) => {
 
 app.get('/', (req, res) => res.send('Hello!'));
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!');
 });
