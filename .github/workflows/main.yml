@@ -31,3 +31,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: node app.js
+    # Runs heroku
+    - name: Login to Heroku Container registry
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login   
