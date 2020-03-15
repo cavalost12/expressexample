@@ -20,6 +20,8 @@ app.get('/signup/:id', async (req, res) => {
     res.json(data);
 });
 
+app.get('/', (req, res) => res.send('Hello!'));
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
