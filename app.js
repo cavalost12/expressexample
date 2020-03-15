@@ -3,7 +3,8 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 const apiFtUrl = 'https://api.ft.com/content/search/v1';
-const port = process.env.PORT || 3000
+const apiKey = process.env.API_KEY;
+const port = process.env.PORT || 3000;
 
 app.get('/signup/:id', async (req, res) => {
     const { data } = await axios.post(apiFtUrl, {
@@ -14,7 +15,7 @@ app.get('/signup/:id', async (req, res) => {
     }, {
         headers: {
             'Content-Type': 'application/json',
-            'X-Api-Key': '59cbaf20e3e06d3565778e7b7aeb55cf55a24adf82b8d09d67cc6d71'
+            'X-Api-Key': 'apiKey'
         }
     });
     console.log(req.params.id)
